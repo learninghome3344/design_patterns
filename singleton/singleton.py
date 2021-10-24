@@ -6,7 +6,7 @@ import configs
 import threading
 
 
-# �����κ�һ���ط�ʹ��Util��ʵ���������Ķ�����ͬһ�����󣡣���
+# 程序中任何地方使用Util类实例化出来的时候都是同一个对象！！！
 class Util(object):
 
     _lock = threading.Lock()
@@ -15,7 +15,7 @@ class Util(object):
         self.host = host
         self.port = port
 
-    # ��д__new__ʵ�ֵ���ģʽ
+    # 重写__new__方法实现单例模式
     def __new__(cls, *args, **kwargs):
         if not hasattr(cls, "_instance"):
             with cls._lock:
