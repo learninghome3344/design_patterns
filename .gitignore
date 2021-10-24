@@ -1,3 +1,8 @@
+# customized config
+__pycache__
+.idea
+pkg
+
 # Prerequisites
 *.d
 
